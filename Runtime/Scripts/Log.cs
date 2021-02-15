@@ -2,16 +2,39 @@ using System.Text;
 
 namespace Zigurous.Debugging
 {
+    /// <summary>
+    /// Provides more robust console logging functions compared to
+    /// UnityEngine.Debug.
+    /// </summary>
     public static class Debug
     {
+        /// <summary>
+        /// A prefix appended to every log message printed to the console.
+        /// </summary>
         public static string prefix = "[Zigurous]: ";
+
+        /// <summary>
+        /// The display string for any null references that are logged to the
+        /// console.
+        /// </summary>
         public static string nullReference = "Null";
+
+        /// <summary>
+        /// The delimiter used when joining multiple messages into a single log
+        /// message printed to the console.
+        /// </summary>
         public static string delimiter = ", ";
 
         #if UNITY_EDITOR || DEVELOPMENT_BUILD
+        /// <summary>
+        /// Handles the creation of strings in a more optimized way.
+        /// </summary>
         private static StringBuilder stringBuilder = new StringBuilder();
         #endif
 
+        /// <summary>
+        /// Logs a message to the Unity console.
+        /// </summary>
         public static void Log(object message)
         {
             #if UNITY_EDITOR || DEVELOPMENT_BUILD
@@ -24,6 +47,9 @@ namespace Zigurous.Debugging
             #endif
         }
 
+        /// <summary>
+        /// Logs a message to the Unity console under a given context.
+        /// </summary>
         public static void Log(object message, UnityEngine.Object context)
         {
             #if UNITY_EDITOR || DEVELOPMENT_BUILD
@@ -36,6 +62,9 @@ namespace Zigurous.Debugging
             #endif
         }
 
+        /// <summary>
+        /// Logs multiple messages as a single statement to the Unity console.
+        /// </summary>
         public static void Log(params object[] messages)
         {
             #if UNITY_EDITOR || DEVELOPMENT_BUILD
@@ -46,6 +75,9 @@ namespace Zigurous.Debugging
             #endif
         }
 
+        /// <summary>
+        /// Logs a warning message to the Unity console.
+        /// </summary>
         public static void LogWarning(object message)
         {
             #if UNITY_EDITOR || DEVELOPMENT_BUILD
@@ -58,6 +90,9 @@ namespace Zigurous.Debugging
             #endif
         }
 
+        /// <summary>
+        /// Logs a warning message to the Unity console under a given context.
+        /// </summary>
         public static void LogWarning(object message, UnityEngine.Object context)
         {
             #if UNITY_EDITOR || DEVELOPMENT_BUILD
@@ -70,6 +105,10 @@ namespace Zigurous.Debugging
             #endif
         }
 
+        /// <summary>
+        /// Logs multiple warning messages as a single statement to the Unity
+        /// console.
+        /// </summary>
         public static void LogWarning(params object[] messages)
         {
             #if UNITY_EDITOR || DEVELOPMENT_BUILD
@@ -80,6 +119,9 @@ namespace Zigurous.Debugging
             #endif
         }
 
+        /// <summary>
+        /// Logs an error message to the Unity console.
+        /// </summary>
         public static void LogError(object message)
         {
             #if UNITY_EDITOR || DEVELOPMENT_BUILD
@@ -92,6 +134,9 @@ namespace Zigurous.Debugging
             #endif
         }
 
+        /// <summary>
+        /// Logs an error message to the Unity console under a given context.
+        /// </summary>
         public static void LogError(object message, UnityEngine.Object context)
         {
             #if UNITY_EDITOR || DEVELOPMENT_BUILD
@@ -104,6 +149,10 @@ namespace Zigurous.Debugging
             #endif
         }
 
+        /// <summary>
+        /// Logs multiple error messages as a single statement to the Unity
+        /// console.
+        /// </summary>
         public static void LogError(params object[] messages)
         {
             #if UNITY_EDITOR || DEVELOPMENT_BUILD
@@ -114,6 +163,9 @@ namespace Zigurous.Debugging
             #endif
         }
 
+        /// <summary>
+        /// Joins multiple messages into a single message.
+        /// </summary>
         private static void Join(object[] messages)
         {
             #if UNITY_EDITOR || DEVELOPMENT_BUILD

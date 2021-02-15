@@ -3,10 +3,28 @@ using UnityEngine;
 
 namespace Zigurous.Debugging
 {
+    /// <summary>
+    /// Executes two functions a given amount of times and compares how many
+    /// results are equal.
+    /// </summary>
     public abstract class CompareResults<T> : MonoBehaviour where T: IEquatable<T>
     {
+        /// <summary>
+        /// The amount of times each function is executed.
+        /// </summary>
+        [Tooltip("The amount of times each function is executed.")]
         public int iterations = 100;
+
+        /// <summary>
+        /// Prints the result of each iteration of the functions.
+        /// </summary>
+        [Tooltip("Prints the result of each iteration of the functions.")]
         public bool printIndividualResults = false;
+
+        /// <summary>
+        /// Triggers the script to be executed again.
+        /// </summary>
+        [Tooltip("Triggers the script to be executed again.")]
         public bool execute = false;
 
         #if UNITY_EDITOR || DEVELOPMENT_BUILD

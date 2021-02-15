@@ -3,9 +3,22 @@ using UnityEngine;
 
 namespace Zigurous.Debugging
 {
+    /// <summary>
+    /// Measures the execution time of two functions with a given amount of
+    /// iterations.
+    /// </summary>
     public abstract class ComparePerformance : MonoBehaviour
     {
+        /// <summary>
+        /// The amount of times each function is executed.
+        /// </summary>
+        [Tooltip("The amount of times each function is executed.")]
         public int iterations = 1000000;
+
+        /// <summary>
+        /// Triggers the script to be executed again.
+        /// </summary>
+        [Tooltip("Triggers the script to be executed again.")]
         public bool execute = false;
 
         #if UNITY_EDITOR || DEVELOPMENT_BUILD

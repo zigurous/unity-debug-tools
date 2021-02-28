@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace Zigurous.Debugging
+namespace Zigurous.DebugTools
 {
     /// <summary>
     /// Provides more robust console logging functions compared to

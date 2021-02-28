@@ -1,4 +1,6 @@
-# Debugging
+# Debug Tools
+
+The Debug Tools package provides assets and scripts to assist in debugging Unity projects.
 
 ## Installation
 
@@ -10,4 +12,4 @@ To load a package from a Git URL:
 2. Click the add (`+`) button in the status bar
 3. Select **Add package from git URL** from the add menu
 4. Enter the following Git URL in the text box and click Add:
-   `https://github.com/zigurous/unity-debugging.git`
+   `https://github.com/zigurous/unity-debug-tools.git`

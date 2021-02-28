@@ -1,9 +1,10 @@
 {
   "name": "com.zigurous.debug",
-  "version": "0.1.0",
-  "displayName": "Zigurous Debug",
-  "description": "Assets and scripts for debugging Unity projects.",
+  "version": "1.0.0",
+  "displayName": "Zigurous Debug Tools",
+  "description": "The Debug Tools package provides assets and scripts to assist in debugging Unity projects.",
   "unity": "2019.4",
+  "keywords": ["debug"],
   "author": {
     "name": "Zigurous",
     "email": "support@zigurous.com",

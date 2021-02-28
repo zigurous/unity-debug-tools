@@ -4,7 +4,7 @@
   "displayName": "Zigurous Debug Tools",
   "description": "The Debug Tools package provides assets and scripts to assist in debugging Unity projects.",
   "unity": "2019.4",
-  "keywords": ["debug"],
+  "keywords": ["debug", "performance"],
   "author": {
     "name": "Zigurous",
     "email": "support@zigurous.com",

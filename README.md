@@ -1,6 +1,6 @@
 # Debug Tools
 
-The Debug Tools package provides assets and scripts to assist in debugging Unity projects.
+The Debug Tools package contains assets and scripts for debugging Unity projects.
 
 ## Installation
 

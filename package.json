@@ -1,6 +1,6 @@
 {
   "name": "com.zigurous.debug",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "displayName": "Zigurous Debug Tools",
   "description": "The Debug Tools package contains assets and scripts for debugging Unity projects.",
   "unity": "2019.4",

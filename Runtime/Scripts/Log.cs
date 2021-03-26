@@ -6,7 +6,7 @@ namespace Zigurous.DebugTools
     /// Provides more robust console logging functions compared to
     /// UnityEngine.Debug.
     /// </summary>
-    public static class Debug
+    public static class Log
     {
         /// <summary>
         /// A prefix appended to every log message printed to the console.
@@ -35,13 +35,13 @@ namespace Zigurous.DebugTools
         /// <summary>
         /// Logs a message to the Unity console.
         /// </summary>
-        public static void Log(object message)
+        public static void Message(object message)
         {
             #if UNITY_EDITOR || DEVELOPMENT_BUILD
             if (message != null) {
-                UnityEngine.Debug.Log(stringBuilder.Append(Debug.prefix).Append(message));
+                UnityEngine.Debug.Log(stringBuilder.Append(Log.prefix).Append(message));
             } else {
-                UnityEngine.Debug.Log(stringBuilder.Append(Debug.prefix).Append(Debug.nullReference));
+                UnityEngine.Debug.Log(stringBuilder.Append(Log.prefix).Append(Log.nullReference));
             }
             stringBuilder.Clear();
             #endif
@@ -50,13 +50,13 @@ namespace Zigurous.DebugTools
         /// <summary>
         /// Logs a message to the Unity console under a given context.
         /// </summary>
-        public static void Log(object message, UnityEngine.Object context)
+        public static void Message(object message, UnityEngine.Object context)
         {
             #if UNITY_EDITOR || DEVELOPMENT_BUILD
             if (message != null) {
-                UnityEngine.Debug.Log(stringBuilder.Append(Debug.prefix).Append(message), context);
+                UnityEngine.Debug.Log(stringBuilder.Append(Log.prefix).Append(message), context);
             } else {
-                UnityEngine.Debug.Log(stringBuilder.Append(Debug.prefix).Append(Debug.nullReference), context);
+                UnityEngine.Debug.Log(stringBuilder.Append(Log.prefix).Append(Log.nullReference), context);
             }
             stringBuilder.Clear();
             #endif
@@ -65,10 +65,10 @@ namespace Zigurous.DebugTools
         /// <summary>
         /// Logs multiple messages as a single statement to the Unity console.
         /// </summary>
-        public static void Log(params object[] messages)
+        public static void Message(params object[] messages)
         {
             #if UNITY_EDITOR || DEVELOPMENT_BUILD
-            stringBuilder.Append(Debug.prefix);
+            stringBuilder.Append(Log.prefix);
             Join(messages);
             UnityEngine.Debug.Log(stringBuilder);
             stringBuilder.Clear();
@@ -78,13 +78,13 @@ namespace Zigurous.DebugTools
         /// <summary>
         /// Logs a warning message to the Unity console.
         /// </summary>
-        public static void LogWarning(object message)
+        public static void Warning(object message)
         {
             #if UNITY_EDITOR || DEVELOPMENT_BUILD
             if (message != null) {
-                UnityEngine.Debug.LogWarning(stringBuilder.Append(Debug.prefix).Append(message));
+                UnityEngine.Debug.LogWarning(stringBuilder.Append(Log.prefix).Append(message));
             } else {
-                UnityEngine.Debug.LogWarning(stringBuilder.Append(Debug.prefix).Append(Debug.nullReference));
+                UnityEngine.Debug.LogWarning(stringBuilder.Append(Log.prefix).Append(Log.nullReference));
             }
             stringBuilder.Clear();
             #endif
@@ -93,13 +93,13 @@ namespace Zigurous.DebugTools
         /// <summary>
         /// Logs a warning message to the Unity console under a given context.
         /// </summary>
-        public static void LogWarning(object message, UnityEngine.Object context)
+        public static void Warning(object message, UnityEngine.Object context)
         {
             #if UNITY_EDITOR || DEVELOPMENT_BUILD
             if (message != null) {
-                UnityEngine.Debug.LogWarning(stringBuilder.Append(Debug.prefix).Append(message), context);
+                UnityEngine.Debug.LogWarning(stringBuilder.Append(Log.prefix).Append(message), context);
             } else {
-                UnityEngine.Debug.LogWarning(stringBuilder.Append(Debug.prefix).Append(Debug.nullReference), context);
+                UnityEngine.Debug.LogWarning(stringBuilder.Append(Log.prefix).Append(Log.nullReference), context);
             }
             stringBuilder.Clear();
             #endif
@@ -109,10 +109,10 @@ namespace Zigurous.DebugTools
         /// Logs multiple warning messages as a single statement to the Unity
         /// console.
         /// </summary>
-        public static void LogWarning(params object[] messages)
+        public static void Warning(params object[] messages)
         {
             #if UNITY_EDITOR || DEVELOPMENT_BUILD
-            stringBuilder.Append(Debug.prefix);
+            stringBuilder.Append(Log.prefix);
             Join(messages);
             UnityEngine.Debug.LogWarning(stringBuilder);
             stringBuilder.Clear();
@@ -122,13 +122,13 @@ namespace Zigurous.DebugTools
         /// <summary>
         /// Logs an error message to the Unity console.
         /// </summary>
-        public static void LogError(object message)
+        public static void Error(object message)
         {
             #if UNITY_EDITOR || DEVELOPMENT_BUILD
             if (message != null) {
-                UnityEngine.Debug.LogError(stringBuilder.Append(Debug.prefix).Append(message));
+                UnityEngine.Debug.LogError(stringBuilder.Append(Log.prefix).Append(message));
             } else {
-                UnityEngine.Debug.LogError(stringBuilder.Append(Debug.prefix).Append(Debug.nullReference));
+                UnityEngine.Debug.LogError(stringBuilder.Append(Log.prefix).Append(Log.nullReference));
             }
             stringBuilder.Clear();
             #endif
@@ -137,13 +137,13 @@ namespace Zigurous.DebugTools
         /// <summary>
         /// Logs an error message to the Unity console under a given context.
         /// </summary>
-        public static void LogError(object message, UnityEngine.Object context)
+        public static void Error(object message, UnityEngine.Object context)
         {
             #if UNITY_EDITOR || DEVELOPMENT_BUILD
             if (message != null) {
-                UnityEngine.Debug.LogError(stringBuilder.Append(Debug.prefix).Append(message), context);
+                UnityEngine.Debug.LogError(stringBuilder.Append(Log.prefix).Append(message), context);
             } else {
-                UnityEngine.Debug.LogError(stringBuilder.Append(Debug.prefix).Append(Debug.nullReference), context);
+                UnityEngine.Debug.LogError(stringBuilder.Append(Log.prefix).Append(Log.nullReference), context);
             }
             stringBuilder.Clear();
             #endif
@@ -153,10 +153,10 @@ namespace Zigurous.DebugTools
         /// Logs multiple error messages as a single statement to the Unity
         /// console.
         /// </summary>
-        public static void LogError(params object[] messages)
+        public static void Error(params object[] messages)
         {
             #if UNITY_EDITOR || DEVELOPMENT_BUILD
-            stringBuilder.Append(Debug.prefix);
+            stringBuilder.Append(Log.prefix);
             Join(messages);
             UnityEngine.Debug.LogError(stringBuilder);
             stringBuilder.Clear();
@@ -171,7 +171,7 @@ namespace Zigurous.DebugTools
             #if UNITY_EDITOR || DEVELOPMENT_BUILD
             if (messages == null)
             {
-                stringBuilder.Append(Debug.nullReference);
+                stringBuilder.Append(Log.nullReference);
                 return;
             }
 
@@ -180,9 +180,9 @@ namespace Zigurous.DebugTools
                 object message = messages[i];
 
                 if (message != null) {
-                    stringBuilder.Append(message).Append(Debug.delimiter);
+                    stringBuilder.Append(message).Append(Log.delimiter);
                 } else {
-                    stringBuilder.Append(Debug.nullReference).Append(Debug.delimiter);
+                    stringBuilder.Append(Log.nullReference).Append(Log.delimiter);
                 }
             }
 
@@ -193,7 +193,7 @@ namespace Zigurous.DebugTools
                 if (lastMessage != null) {
                     stringBuilder.Append(lastMessage);
                 } else {
-                    stringBuilder.Append(Debug.nullReference);
+                    stringBuilder.Append(Log.nullReference);
                 }
             }
             #endif

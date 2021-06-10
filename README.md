@@ -2,6 +2,12 @@
 
 The Debug Tools package contains assets and scripts for debugging Unity projects. Included in the package are scripts for enhanced console logging, comparing performance, displaying framerate, and more.
 
+Import the package namespace in each class/script you want to use it. You may need to regenerate project files/assemblies first.
+
+```csharp
+using Zigurous.DebugTools;
+```
+
 ## Installation
 
 The Unity Package Manager can load a package from a Git repository on a remote server.

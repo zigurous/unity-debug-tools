@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Text;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Zigurous.Debug
@@ -16,30 +17,83 @@ namespace Zigurous.Debug
         public Text displayText;
 
         /// <summary>
-        /// How often per second the framerate display updates.
+        /// The text format of the framerate display.
         /// </summary>
-        [Tooltip("How often per second the framerate display updates.")]
+        public string displayFormat { get; protected set; }
+
+        /// <summary>
+        /// The amount of seconds between display updates.
+        /// </summary>
+        [Tooltip("The amount of seconds between display updates.")]
         public float refreshRate = 1.0f;
+
+        /// <summary>
+        /// The number of decimal digits to display.
+        /// </summary>
+        [Tooltip("The number of decimal digits to display.")]
+        [SerializeField]
+        private int _decimals = 0;
+
+        /// <summary>
+        /// The number of decimal digits to display.
+        /// </summary>
+        public int decimals
+        {
+            get => _decimals;
+            set
+            {
+                _decimals = value;
+                SetDisplayFormat(value);
+            }
+        }
 
         /// <summary>
         /// The time of the next framerate update.
         /// </summary>
         protected float _nextUpdate;
 
+        private void OnValidate()
+        {
+            SetDisplayFormat(this.decimals);
+        }
+
+        private void Awake()
+        {
+            SetDisplayFormat(this.decimals);
+        }
+
         private void Update()
         {
             if (Time.unscaledTime > _nextUpdate)
             {
-                int fps = (int)(1.0f / Time.unscaledDeltaTime);
-                UpdateDisplay(fps);
                 _nextUpdate = Time.unscaledTime + this.refreshRate;
+
+                float fps = 1.0f / Time.unscaledDeltaTime;
+                UpdateDisplay(fps);
             }
         }
 
-        protected virtual void UpdateDisplay(int fps)
+        private void SetDisplayFormat(int decimals)
+        {
+            int length = 1 + decimals;
+            if (decimals > 0) length++;
+
+            StringBuilder stringBuilder = new StringBuilder(length);
+            stringBuilder.Append('0');
+
+            if (decimals > 0)
+            {
+                stringBuilder.Append('.');
+                stringBuilder.Insert(2, "0", decimals);
+            }
+
+            this.displayFormat = stringBuilder.ToString();
+        }
+
+        protected virtual void UpdateDisplay(float fps)
         {
             if (this.displayText != null) {
-                this.displayText.text = fps.ToString();
+                this.displayText.text = fps.ToString(this.displayFormat);
             }
         }
 

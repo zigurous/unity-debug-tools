@@ -6,6 +6,7 @@ namespace Zigurous.DebugTools
     /// <summary>
     /// Displays the framerate of the application in realtime.
     /// </summary>
+    [AddComponentMenu("Zigurous/Debug/FPS Display")]
     public class FPSDisplay : MonoBehaviour
     {
         /// <summary>

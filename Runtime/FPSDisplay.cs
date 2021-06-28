@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace Zigurous.DebugTools
+namespace Zigurous.Debug
 {
     /// <summary>
     /// Displays the framerate of the application in realtime.

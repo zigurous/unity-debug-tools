@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Zigurous.DebugTools
+namespace Zigurous.Debug
 {
     /// <summary>
     /// Executes two functions a given amount of times and compares how many

@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Zigurous.DebugTools
+namespace Zigurous.Debug
 {
     /// <summary>
     /// Measures the execution time of two functions with a given amount of

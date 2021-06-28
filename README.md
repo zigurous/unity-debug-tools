@@ -5,7 +5,7 @@ The Debug Tools package contains assets and scripts for debugging Unity projects
 Import the package namespace in each class/script you want to use it. You may need to regenerate project files/assemblies first.
 
 ```csharp
-using Zigurous.DebugTools;
+using Zigurous.Debug;
 ```
 
 ## Installation

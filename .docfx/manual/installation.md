@@ -1,8 +1,4 @@
-# Debug Tools
-
-The Debug Tools package contains assets and scripts for debugging Unity projects. Included in the package are scripts for enhanced console logging, comparing performance, displaying framerate, and more.
-
-## Installation
+# Installation
 
 Use the Unity [Package Manager](https://docs.unity3d.com/Manual/upm-ui.html) to install the Debug Tools package.
 
@@ -25,3 +21,9 @@ Import the package namespace in each class/script you want to use it. You may ne
 ```csharp
 using Zigurous.Debug;
 ```
+
+### Source Code
+
+The source code for the Debug Tools package is in the following repository:
+
+- https://github.com/zigurous/unity-debug-tools

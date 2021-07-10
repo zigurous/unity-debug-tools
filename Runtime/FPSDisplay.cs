@@ -28,6 +28,11 @@ namespace Zigurous.Debug
         public float refreshRate = 1.0f;
 
         /// <summary>
+        /// The time of the next framerate update.
+        /// </summary>
+        public float nextUpdate { get; private set; }
+
+        /// <summary>
         /// The number of decimal digits to display.
         /// </summary>
         [Tooltip("The number of decimal digits to display.")]
@@ -47,11 +52,6 @@ namespace Zigurous.Debug
             }
         }
 
-        /// <summary>
-        /// The time of the next framerate update.
-        /// </summary>
-        protected float _nextUpdate;
-
         private void OnValidate()
         {
             SetDisplayFormat(this.decimals);
@@ -64,16 +64,17 @@ namespace Zigurous.Debug
 
         private void Update()
         {
-            if (Time.unscaledTime > _nextUpdate)
+            if (Time.unscaledTime > this.nextUpdate)
             {
-                _nextUpdate = Time.unscaledTime + this.refreshRate;
-
+                this.nextUpdate = Time.unscaledTime + this.refreshRate;
                 float fps = 1.0f / Time.unscaledDeltaTime;
                 UpdateDisplay(fps);
             }
         }
 
-        private void SetDisplayFormat(int decimals)
+        /// <summary>Sets the text format of the framerate display.</summary>
+        /// <param name="decimals">The number of decimal digits to display.</param>
+        protected virtual void SetDisplayFormat(int decimals)
         {
             int length = 1 + decimals;
             if (decimals > 0) length++;
@@ -90,6 +91,8 @@ namespace Zigurous.Debug
             this.displayFormat = stringBuilder.ToString();
         }
 
+        /// <summary>Updates the display with the given framerate.</summary>
+        /// <param name="fps">The framerate to display.</param>
         protected virtual void UpdateDisplay(float fps)
         {
             if (this.displayText != null) {

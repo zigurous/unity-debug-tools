@@ -32,134 +32,183 @@ namespace Zigurous.Debug
         private static StringBuilder stringBuilder = new StringBuilder();
         #endif
 
-        /// <summary>
-        /// Logs a message to the Unity console.
-        /// </summary>
+        /// <summary>Logs a message to the Unity console.</summary>
+        /// <param name="message">The message to log.</param>
         public static void Message(object message)
         {
-            #if UNITY_EDITOR || DEVELOPMENT_BUILD
-            if (message != null) {
-                UnityEngine.Debug.Log(stringBuilder.Append(Log.prefix).Append(message));
-            } else {
-                UnityEngine.Debug.Log(stringBuilder.Append(Log.prefix).Append(Log.nullReference));
-            }
-            stringBuilder.Clear();
-            #endif
+            Message(message, Log.prefix);
         }
 
-        /// <summary>
-        /// Logs a message to the Unity console under a given context.
-        /// </summary>
-        public static void Message(object message, UnityEngine.Object context)
+        /// <summary>Logs a message to the Unity console with a custom prefix.</summary>
+        /// <param name="message">The message to log.</param>
+        /// <param name="prefix">The prefix of the message.</param>
+        public static void Message(object message, string prefix)
         {
             #if UNITY_EDITOR || DEVELOPMENT_BUILD
-            if (message != null) {
-                UnityEngine.Debug.Log(stringBuilder.Append(Log.prefix).Append(message), context);
-            } else {
-                UnityEngine.Debug.Log(stringBuilder.Append(Log.prefix).Append(Log.nullReference), context);
-            }
             stringBuilder.Clear();
+
+            if (message != null) {
+                UnityEngine.Debug.Log(stringBuilder.Append(prefix).Append(message));
+            } else {
+                UnityEngine.Debug.Log(stringBuilder.Append(prefix).Append(Log.nullReference));
+            }
             #endif
         }
 
-        /// <summary>
-        /// Logs multiple messages as a single statement to the Unity console.
-        /// </summary>
+        /// <summary>Logs a message to the Unity console under a given context.</summary>
+        /// <param name="message">The message to log.</param>
+        /// <param name="context">The context of the message.</param>
+        public static void Message(object message, UnityEngine.Object context)
+        {
+            Message(message, Log.prefix, context);
+        }
+
+        /// <summary>Logs a message to the Unity console with a custom prefix under a given context.</summary>
+        /// <param name="message">The message to log.</param>
+        /// <param name="prefix">The prefix of the message.</param>
+        /// <param name="context">The context of the message.</param>
+        public static void Message(object message, string prefix, UnityEngine.Object context)
+        {
+            #if UNITY_EDITOR || DEVELOPMENT_BUILD
+            stringBuilder.Clear();
+
+            if (message != null) {
+                UnityEngine.Debug.Log(stringBuilder.Append(prefix).Append(message), context);
+            } else {
+                UnityEngine.Debug.Log(stringBuilder.Append(prefix).Append(Log.nullReference), context);
+            }
+            #endif
+        }
+
+        /// <summary>Logs multiple messages as a single statement to the Unity console.</summary>
+        /// <param name="messages">The messages to log.</param>
         public static void Message(params object[] messages)
         {
             #if UNITY_EDITOR || DEVELOPMENT_BUILD
+            stringBuilder.Clear();
             stringBuilder.Append(Log.prefix);
             Join(messages);
             UnityEngine.Debug.Log(stringBuilder);
-            stringBuilder.Clear();
             #endif
         }
 
-        /// <summary>
-        /// Logs a warning message to the Unity console.
-        /// </summary>
+        /// <summary>Logs a warning message to the Unity console.</summary>
+        /// <param name="message">The message to log.</param>
         public static void Warning(object message)
         {
-            #if UNITY_EDITOR || DEVELOPMENT_BUILD
-            if (message != null) {
-                UnityEngine.Debug.LogWarning(stringBuilder.Append(Log.prefix).Append(message));
-            } else {
-                UnityEngine.Debug.LogWarning(stringBuilder.Append(Log.prefix).Append(Log.nullReference));
-            }
-            stringBuilder.Clear();
-            #endif
+            Warning(message, Log.prefix);
         }
 
-        /// <summary>
-        /// Logs a warning message to the Unity console under a given context.
-        /// </summary>
-        public static void Warning(object message, UnityEngine.Object context)
+        /// <summary>Logs a warning message to the Unity console with a custom prefix.</summary>
+        /// <param name="message">The message to log.</param>
+        /// <param name="prefix">The prefix of the message.</param>
+        public static void Warning(object message, string prefix)
         {
             #if UNITY_EDITOR || DEVELOPMENT_BUILD
-            if (message != null) {
-                UnityEngine.Debug.LogWarning(stringBuilder.Append(Log.prefix).Append(message), context);
-            } else {
-                UnityEngine.Debug.LogWarning(stringBuilder.Append(Log.prefix).Append(Log.nullReference), context);
-            }
             stringBuilder.Clear();
+
+            if (message != null) {
+                UnityEngine.Debug.LogWarning(stringBuilder.Append(prefix).Append(message));
+            } else {
+                UnityEngine.Debug.LogWarning(stringBuilder.Append(prefix).Append(Log.nullReference));
+            }
             #endif
         }
 
-        /// <summary>
-        /// Logs multiple warning messages as a single statement to the Unity
-        /// console.
-        /// </summary>
+        /// <summary>Logs a warning message to the Unity console under a given context.</summary>
+        /// <param name="message">The message to log.</param>
+        /// <param name="context">The context of the message.</param>
+        public static void Warning(object message, UnityEngine.Object context)
+        {
+            Warning(message, Log.prefix, context);
+        }
+
+        /// <summary>Logs a warning message to the Unity console with a custom prefix under a given context.</summary>
+        /// <param name="message">The message to log.</param>
+        /// <param name="prefix">The prefix of the message.</param>
+        /// <param name="context">The context of the message.</param>
+        public static void Warning(object message, string prefix, UnityEngine.Object context)
+        {
+            #if UNITY_EDITOR || DEVELOPMENT_BUILD
+            stringBuilder.Clear();
+
+            if (message != null) {
+                UnityEngine.Debug.LogWarning(stringBuilder.Append(prefix).Append(message), context);
+            } else {
+                UnityEngine.Debug.LogWarning(stringBuilder.Append(prefix).Append(Log.nullReference), context);
+            }
+            #endif
+        }
+
+        /// <summary>Logs multiple warning messages as a single statement to the Unity console.</summary>
+        /// <param name="messages">The messages to log.</param>
         public static void Warning(params object[] messages)
         {
             #if UNITY_EDITOR || DEVELOPMENT_BUILD
+            stringBuilder.Clear();
             stringBuilder.Append(Log.prefix);
             Join(messages);
             UnityEngine.Debug.LogWarning(stringBuilder);
-            stringBuilder.Clear();
             #endif
         }
 
-        /// <summary>
-        /// Logs an error message to the Unity console.
-        /// </summary>
+        /// <summary>Logs an error message to the Unity console.</summary>
+        /// <param name="message">The message to log.</param>
         public static void Error(object message)
         {
-            #if UNITY_EDITOR || DEVELOPMENT_BUILD
-            if (message != null) {
-                UnityEngine.Debug.LogError(stringBuilder.Append(Log.prefix).Append(message));
-            } else {
-                UnityEngine.Debug.LogError(stringBuilder.Append(Log.prefix).Append(Log.nullReference));
-            }
-            stringBuilder.Clear();
-            #endif
+            Error(message, Log.prefix);
         }
 
-        /// <summary>
-        /// Logs an error message to the Unity console under a given context.
-        /// </summary>
-        public static void Error(object message, UnityEngine.Object context)
+        /// <summary>Logs an error message to the Unity console with a custom prefix.</summary>
+        /// <param name="message">The message to log.</param>
+        /// <param name="prefix">The prefix of the message.</param>
+        public static void Error(object message, string prefix)
         {
             #if UNITY_EDITOR || DEVELOPMENT_BUILD
-            if (message != null) {
-                UnityEngine.Debug.LogError(stringBuilder.Append(Log.prefix).Append(message), context);
-            } else {
-                UnityEngine.Debug.LogError(stringBuilder.Append(Log.prefix).Append(Log.nullReference), context);
-            }
             stringBuilder.Clear();
+
+            if (message != null) {
+                UnityEngine.Debug.LogError(stringBuilder.Append(prefix).Append(message));
+            } else {
+                UnityEngine.Debug.LogError(stringBuilder.Append(prefix).Append(Log.nullReference));
+            }
             #endif
         }
 
-        /// <summary>
-        /// Logs multiple error messages as a single statement to the Unity
-        /// console.
-        /// </summary>
+        /// <summary>Logs an error message to the Unity console under a given context.</summary>
+        /// <param name="message">The message to log.</param>
+        /// <param name="context">The context of the message.</param>
+        public static void Error(object message, UnityEngine.Object context)
+        {
+            Error(message, Log.prefix, context);
+        }
+
+        /// <summary>Logs an error message to the Unity console with a custom prefix under a given context.</summary>
+        /// <param name="message">The message to log.</param>
+        /// <param name="prefix">The prefix of the message.</param>
+        /// <param name="context">The context of the message.</param>
+        public static void Error(object message, string prefix, UnityEngine.Object context)
+        {
+            #if UNITY_EDITOR || DEVELOPMENT_BUILD
+            stringBuilder.Clear();
+
+            if (message != null) {
+                UnityEngine.Debug.LogError(stringBuilder.Append(prefix).Append(message), context);
+            } else {
+                UnityEngine.Debug.LogError(stringBuilder.Append(prefix).Append(Log.nullReference), context);
+            }
+            #endif
+        }
+
+        /// <summary>Logs multiple error messages as a single statement to the Unity console.</summary>
+        /// <param name="messages">The messages to log.</param>
         public static void Error(params object[] messages)
         {
             #if UNITY_EDITOR || DEVELOPMENT_BUILD
+            stringBuilder.Clear();
             stringBuilder.Append(Log.prefix);
             Join(messages);
             UnityEngine.Debug.LogError(stringBuilder);
-            stringBuilder.Clear();
             #endif
         }
 

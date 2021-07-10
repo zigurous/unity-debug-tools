@@ -1,6 +1,6 @@
 # Debug Tools
 
-The Debug Tools package contains assets and scripts for debugging Unity projects. Included in the package are scripts for enhanced console logging, comparing performance, displaying framerate, and more.
+The Debug Tools package contains assets and scripts for debugging Unity projects. Included in the package are scripts for enhanced console logging, benchmarking, displaying framerate, and more. The package also comes with shaders to visualize different vertex data.
 
 ## Installation
 
@@ -29,3 +29,10 @@ Import the package namespace in each script or file you want to use it.
 ```csharp
 using Zigurous.Debug;
 ```
+
+## Reference
+
+- [Logging](https://docs.zigurous.com/com.zigurous.debug/manual/logging.html)
+- [Benchmarking](https://docs.zigurous.com/com.zigurous.debug/manual/benchmarking.html)
+- [Framerate Display](https://docs.zigurous.com/com.zigurous.debug/manual/framerate.html)
+- [Debug Shaders](https://docs.zigurous.com/com.zigurous.debug/manual/shaders.html)

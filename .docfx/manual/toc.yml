@@ -2,3 +2,13 @@
   href: index.md
 - name: Installation
   href: installation.md
+- name: Reference
+  items:
+  - name: Logging
+    href: logging.md
+  - name: Benchmarking
+    href: benchmarking.md
+  - name: Framerate Display
+    href: framerate.md
+  - name: Debug Shaders
+    href: shaders.md

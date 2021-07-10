@@ -1,6 +1,6 @@
 {
   "name": "com.zigurous.debug",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "displayName": "Zigurous Debug Tools",
   "description": "The Debug Tools package contains assets and scripts for debugging Unity projects. Included in the package are scripts for enhanced console logging, benchmarking, displaying framerate, and more. The package also comes with shaders to visualize different vertex data.",
   "unity": "2019.4",

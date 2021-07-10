@@ -80,14 +80,14 @@ namespace Zigurous.Debug
             #endif
         }
 
-        /// <summary>Logs multiple messages as a single statement to the Unity console.</summary>
+        /// <summary>Logs multiple messages as a single message to the Unity console.</summary>
         /// <param name="messages">The messages to log.</param>
         public static void Message(params object[] messages)
         {
             #if UNITY_EDITOR || DEVELOPMENT_BUILD
             stringBuilder.Clear();
             stringBuilder.Append(Log.prefix);
-            Join(messages);
+            stringBuilder.Join(messages);
             UnityEngine.Debug.Log(stringBuilder);
             #endif
         }
@@ -140,14 +140,14 @@ namespace Zigurous.Debug
             #endif
         }
 
-        /// <summary>Logs multiple warning messages as a single statement to the Unity console.</summary>
+        /// <summary>Logs multiple warning messages as a single message to the Unity console.</summary>
         /// <param name="messages">The messages to log.</param>
         public static void Warning(params object[] messages)
         {
             #if UNITY_EDITOR || DEVELOPMENT_BUILD
             stringBuilder.Clear();
             stringBuilder.Append(Log.prefix);
-            Join(messages);
+            stringBuilder.Join(messages);
             UnityEngine.Debug.LogWarning(stringBuilder);
             #endif
         }
@@ -200,22 +200,82 @@ namespace Zigurous.Debug
             #endif
         }
 
-        /// <summary>Logs multiple error messages as a single statement to the Unity console.</summary>
+        /// <summary>Logs multiple error messages as a single message to the Unity console.</summary>
         /// <param name="messages">The messages to log.</param>
         public static void Error(params object[] messages)
         {
             #if UNITY_EDITOR || DEVELOPMENT_BUILD
             stringBuilder.Clear();
             stringBuilder.Append(Log.prefix);
-            Join(messages);
+            stringBuilder.Join(messages);
             UnityEngine.Debug.LogError(stringBuilder);
+            #endif
+        }
+
+        /// <summary>Logs an assertion message to the Unity console.</summary>
+        /// <param name="message">The message to log.</param>
+        public static void Assertion(object message)
+        {
+            Assertion(message, Log.prefix);
+        }
+
+        /// <summary>Logs an assertion message to the Unity console with a custom prefix.</summary>
+        /// <param name="message">The message to log.</param>
+        /// <param name="prefix">The prefix of the message.</param>
+        public static void Assertion(object message, string prefix)
+        {
+            #if UNITY_ASSERTIONS && (UNITY_EDITOR || DEVELOPMENT_BUILD)
+            stringBuilder.Clear();
+
+            if (message != null) {
+                UnityEngine.Debug.LogAssertion(stringBuilder.Append(prefix).Append(message));
+            } else {
+                UnityEngine.Debug.LogAssertion(stringBuilder.Append(prefix).Append(Log.nullReference));
+            }
+            #endif
+        }
+
+        /// <summary>Logs an assertion message to the Unity console under a given context.</summary>
+        /// <param name="message">The message to log.</param>
+        /// <param name="context">The context of the message.</param>
+        public static void Assertion(object message, UnityEngine.Object context)
+        {
+            Assertion(message, Log.prefix, context);
+        }
+
+        /// <summary>Logs an assertion message to the Unity console with a custom prefix under a given context.</summary>
+        /// <param name="message">The message to log.</param>
+        /// <param name="prefix">The prefix of the message.</param>
+        /// <param name="context">The context of the message.</param>
+        public static void Assertion(object message, string prefix, UnityEngine.Object context)
+        {
+            #if UNITY_ASSERTIONS && (UNITY_EDITOR || DEVELOPMENT_BUILD)
+            stringBuilder.Clear();
+
+            if (message != null) {
+                UnityEngine.Debug.LogAssertion(stringBuilder.Append(prefix).Append(message), context);
+            } else {
+                UnityEngine.Debug.LogAssertion(stringBuilder.Append(prefix).Append(Log.nullReference), context);
+            }
+            #endif
+        }
+
+        /// <summary>Logs multiple assertion messages as a single message to the Unity console.</summary>
+        /// <param name="messages">The messages to log.</param>
+        public static void Assertion(params object[] messages)
+        {
+            #if UNITY_ASSERTIONS && (UNITY_EDITOR || DEVELOPMENT_BUILD)
+            stringBuilder.Clear();
+            stringBuilder.Append(Log.prefix);
+            stringBuilder.Join(messages);
+            UnityEngine.Debug.LogAssertion(stringBuilder);
             #endif
         }
 
         /// <summary>
         /// Joins multiple messages into a single message.
         /// </summary>
-        private static void Join(object[] messages)
+        private static void Join(this StringBuilder stringBuilder, object[] messages)
         {
             #if UNITY_EDITOR || DEVELOPMENT_BUILD
             if (messages == null)

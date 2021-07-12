@@ -32,14 +32,18 @@ namespace Zigurous.Debug
         private static StringBuilder stringBuilder = new StringBuilder();
         #endif
 
-        /// <summary>Logs a message to the Unity console.</summary>
+        /// <summary>
+        /// Logs a message to the Unity console.
+        /// </summary>
         /// <param name="message">The message to log.</param>
         public static void Message(object message)
         {
             Message(message, Log.prefix);
         }
 
-        /// <summary>Logs a message to the Unity console with a custom prefix.</summary>
+        /// <summary>
+        /// Logs a message to the Unity console with a custom prefix.
+        /// </summary>
         /// <param name="message">The message to log.</param>
         /// <param name="prefix">The prefix of the message.</param>
         public static void Message(object message, string prefix)
@@ -55,7 +59,9 @@ namespace Zigurous.Debug
             #endif
         }
 
-        /// <summary>Logs a message to the Unity console under a given context.</summary>
+        /// <summary>
+        /// Logs a message to the Unity console under a given context.
+        /// </summary>
         /// <param name="message">The message to log.</param>
         /// <param name="context">The context of the message.</param>
         public static void Message(object message, UnityEngine.Object context)
@@ -63,7 +69,10 @@ namespace Zigurous.Debug
             Message(message, Log.prefix, context);
         }
 
-        /// <summary>Logs a message to the Unity console with a custom prefix under a given context.</summary>
+        /// <summary>
+        /// Logs a message to the Unity console with a custom prefix under a
+        /// given context.
+        /// </summary>
         /// <param name="message">The message to log.</param>
         /// <param name="prefix">The prefix of the message.</param>
         /// <param name="context">The context of the message.</param>
@@ -80,7 +89,9 @@ namespace Zigurous.Debug
             #endif
         }
 
-        /// <summary>Logs multiple messages as a single message to the Unity console.</summary>
+        /// <summary>
+        /// Logs multiple messages as a single message to the Unity console.
+        /// </summary>
         /// <param name="messages">The messages to log.</param>
         public static void Message(params object[] messages)
         {
@@ -92,14 +103,18 @@ namespace Zigurous.Debug
             #endif
         }
 
-        /// <summary>Logs a warning message to the Unity console.</summary>
+        /// <summary>
+        /// Logs a warning message to the Unity console.
+        /// </summary>
         /// <param name="message">The message to log.</param>
         public static void Warning(object message)
         {
             Warning(message, Log.prefix);
         }
 
-        /// <summary>Logs a warning message to the Unity console with a custom prefix.</summary>
+        /// <summary>
+        /// Logs a warning message to the Unity console with a custom prefix.
+        /// </summary>
         /// <param name="message">The message to log.</param>
         /// <param name="prefix">The prefix of the message.</param>
         public static void Warning(object message, string prefix)
@@ -115,7 +130,9 @@ namespace Zigurous.Debug
             #endif
         }
 
-        /// <summary>Logs a warning message to the Unity console under a given context.</summary>
+        /// <summary>
+        /// Logs a warning message to the Unity console under a given context.
+        /// </summary>
         /// <param name="message">The message to log.</param>
         /// <param name="context">The context of the message.</param>
         public static void Warning(object message, UnityEngine.Object context)
@@ -123,7 +140,10 @@ namespace Zigurous.Debug
             Warning(message, Log.prefix, context);
         }
 
-        /// <summary>Logs a warning message to the Unity console with a custom prefix under a given context.</summary>
+        /// <summary>
+        /// Logs a warning message to the Unity console with a custom prefix
+        /// under a given context.
+        /// </summary>
         /// <param name="message">The message to log.</param>
         /// <param name="prefix">The prefix of the message.</param>
         /// <param name="context">The context of the message.</param>
@@ -140,7 +160,10 @@ namespace Zigurous.Debug
             #endif
         }
 
-        /// <summary>Logs multiple warning messages as a single message to the Unity console.</summary>
+        /// <summary>
+        /// Logs multiple warning messages as a single message to the Unity
+        /// console.
+        /// </summary>
         /// <param name="messages">The messages to log.</param>
         public static void Warning(params object[] messages)
         {
@@ -152,14 +175,18 @@ namespace Zigurous.Debug
             #endif
         }
 
-        /// <summary>Logs an error message to the Unity console.</summary>
+        /// <summary>
+        /// Logs an error message to the Unity console.
+        /// </summary>
         /// <param name="message">The message to log.</param>
         public static void Error(object message)
         {
             Error(message, Log.prefix);
         }
 
-        /// <summary>Logs an error message to the Unity console with a custom prefix.</summary>
+        /// <summary>
+        /// Logs an error message to the Unity console with a custom prefix.
+        /// </summary>
         /// <param name="message">The message to log.</param>
         /// <param name="prefix">The prefix of the message.</param>
         public static void Error(object message, string prefix)
@@ -175,7 +202,9 @@ namespace Zigurous.Debug
             #endif
         }
 
-        /// <summary>Logs an error message to the Unity console under a given context.</summary>
+        /// <summary>
+        /// Logs an error message to the Unity console under a given context.
+        /// </summary>
         /// <param name="message">The message to log.</param>
         /// <param name="context">The context of the message.</param>
         public static void Error(object message, UnityEngine.Object context)
@@ -183,7 +212,10 @@ namespace Zigurous.Debug
             Error(message, Log.prefix, context);
         }
 
-        /// <summary>Logs an error message to the Unity console with a custom prefix under a given context.</summary>
+        /// <summary>
+        /// Logs an error message to the Unity console with a custom prefix
+        /// under a given context.
+        /// </summary>
         /// <param name="message">The message to log.</param>
         /// <param name="prefix">The prefix of the message.</param>
         /// <param name="context">The context of the message.</param>
@@ -200,7 +232,10 @@ namespace Zigurous.Debug
             #endif
         }
 
-        /// <summary>Logs multiple error messages as a single message to the Unity console.</summary>
+        /// <summary>
+        /// Logs multiple error messages as a single message to the Unity
+        /// console.
+        /// </summary>
         /// <param name="messages">The messages to log.</param>
         public static void Error(params object[] messages)
         {
@@ -212,14 +247,18 @@ namespace Zigurous.Debug
             #endif
         }
 
-        /// <summary>Logs an assertion message to the Unity console.</summary>
+        /// <summary>
+        /// Logs an assertion message to the Unity console.
+        /// </summary>
         /// <param name="message">The message to log.</param>
         public static void Assertion(object message)
         {
             Assertion(message, Log.prefix);
         }
 
-        /// <summary>Logs an assertion message to the Unity console with a custom prefix.</summary>
+        /// <summary>
+        /// Logs an assertion message to the Unity console with a custom prefix.
+        /// </summary>
         /// <param name="message">The message to log.</param>
         /// <param name="prefix">The prefix of the message.</param>
         public static void Assertion(object message, string prefix)
@@ -235,7 +274,9 @@ namespace Zigurous.Debug
             #endif
         }
 
-        /// <summary>Logs an assertion message to the Unity console under a given context.</summary>
+        /// <summary>
+        /// Logs an assertion message to the Unity console under a given context.
+        /// </summary>
         /// <param name="message">The message to log.</param>
         /// <param name="context">The context of the message.</param>
         public static void Assertion(object message, UnityEngine.Object context)
@@ -243,7 +284,10 @@ namespace Zigurous.Debug
             Assertion(message, Log.prefix, context);
         }
 
-        /// <summary>Logs an assertion message to the Unity console with a custom prefix under a given context.</summary>
+        /// <summary>
+        /// Logs an assertion message to the Unity console with a custom prefix
+        /// under a given context.
+        /// </summary>
         /// <param name="message">The message to log.</param>
         /// <param name="prefix">The prefix of the message.</param>
         /// <param name="context">The context of the message.</param>
@@ -260,7 +304,10 @@ namespace Zigurous.Debug
             #endif
         }
 
-        /// <summary>Logs multiple assertion messages as a single message to the Unity console.</summary>
+        /// <summary>
+        /// Logs multiple assertion messages as a single message to the Unity
+        /// console.
+        /// </summary>
         /// <param name="messages">The messages to log.</param>
         public static void Assertion(params object[] messages)
         {

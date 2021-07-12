@@ -2,17 +2,21 @@
 
 namespace Zigurous.Debug
 {
-    /// <summary>Compares how many results are equal between two functions.</summary>
+    /// <summary>
+    /// Compares how many results are equal between two functions.
+    /// </summary>
     /// <typeparam name="T">The type of value to compare.</typeparam>
     public static class Compare<T> where T: IEquatable<T>
     {
-        /// <summary>Tests the equality of the results of <paramref name="foo"/> and <paramref name="bar"/> with a given amount of <paramref name="iterations"/>.</summary>
-        /// <returns>The percentage of equal results.</returns>
+        /// <summary>
+        /// Tests the equality of the results of <paramref name="foo"/> and <paramref name="bar"/> with a given amount of <paramref name="iterations"/>.
+        /// </summary>
         /// <param name="foo">The first function to execute.</param>
         /// <param name="bar">The second function to execute.</param>
         /// <param name="iterations">The amount of times each function is executed.</param>
         /// <param name="log">Logs the final comparison result.</param>
         /// <param name="logIndividual">Logs the result of each iteration of the functions.</param>
+        /// <returns>The percentage of equal results.</returns>
         public static float Test(Func<T> foo, Func<T> bar, int iterations, bool log = true, bool logIndividual = false)
         {
             #if UNITY_EDITOR || DEVELOPMENT_BUILD

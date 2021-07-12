@@ -72,7 +72,9 @@ namespace Zigurous.Debug
             }
         }
 
-        /// <summary>Sets the text format of the framerate display.</summary>
+        /// <summary>
+        /// Sets the text format of the framerate display.
+        /// </summary>
         /// <param name="decimals">The number of decimal digits to display.</param>
         protected virtual void SetDisplayFormat(int decimals)
         {
@@ -91,7 +93,9 @@ namespace Zigurous.Debug
             this.displayFormat = stringBuilder.ToString();
         }
 
-        /// <summary>Updates the display with the given framerate.</summary>
+        /// <summary>
+        /// Updates the display with the given framerate.
+        /// </summary>
         /// <param name="fps">The framerate to display.</param>
         protected virtual void UpdateDisplay(float fps)
         {

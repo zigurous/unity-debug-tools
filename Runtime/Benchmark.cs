@@ -15,11 +15,13 @@ namespace Zigurous.Debug
         private static Stopwatch stopwatch = new Stopwatch();
         #endif
 
-        /// <summary>Measures the execution time of <paramref name="function"/> with a given amount of <paramref name="iterations"/>.</summary>
-        /// <returns>The execution time of the function in milliseconds.</returns>
+        /// <summary>
+        /// Measures the execution time of <paramref name="function"/> with a given amount of <paramref name="iterations"/>.
+        /// </summary>
         /// <param name="foo">The function to be executed.</param>
         /// <param name="iterations">The amount of times the function is executed.</param>
         /// <param name="log">Logs the result to the console.</param>
+        /// <returns>The execution time of the function in milliseconds.</returns>
         public static double Measure(Action foo, int iterations, bool log = true)
         {
             #if UNITY_EDITOR || DEVELOPMENT_BUILD
@@ -43,12 +45,14 @@ namespace Zigurous.Debug
             #endif
         }
 
-        /// <summary>Compares the execution time between <paramref name="foo"/> and <paramref name="bar"/> with a given amount of <paramref name="iterations"/>.</summary>
-        /// <returns>The difference in execution time of the two functions in milliseconds.</returns>
+        /// <summary>
+        /// Compares the execution time between <paramref name="foo"/> and <paramref name="bar"/> with a given amount of <paramref name="iterations"/>.
+        /// </summary>
         /// <param name="foo">The first function to be executed.</param>
         /// <param name="bar">The second function to be executed.</param>
         /// <param name="iterations">The amount of times each function is executed.</param>
         /// <param name="log">Logs the result to the console.</param>
+        /// <returns>The difference in execution time of the two functions in milliseconds.</returns>
         public static double Compare(Action foo, Action bar, int iterations, bool log = true)
         {
             #if UNITY_EDITOR || DEVELOPMENT_BUILD
@@ -66,7 +70,9 @@ namespace Zigurous.Debug
             #endif
         }
 
-        /// <summary>Performs a benchmark that runs each function a given amount of <paramref name="iterations"/>.</summary>
+        /// <summary>
+        /// Performs a benchmark that runs each function a given amount of <paramref name="iterations"/>.
+        /// </summary>
         /// <param name="iterations">The amount of times each function is executed.</param>
         /// <param name="foobar">The functions to be executed.</param>
         public static void Run(int iterations, params Action[] foobar)

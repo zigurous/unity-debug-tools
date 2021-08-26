@@ -14,7 +14,7 @@
   ],
   "repository": "https://github.com/zigurous/unity-debug-tools",
   "documentationUrl": "https://docs.zigurous.com/com.zigurous.debug",
-  "changelogUrl": "https://docs.zigurous.com/com.zigurous.debug/changelog/CHANGELOG.html",
+  "changelogUrl": "https://docs.zigurous.com/com.zigurous.debug/changelog",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/@zigurous"
   },

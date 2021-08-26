@@ -16,7 +16,8 @@ namespace Zigurous.Debug
         #endif
 
         /// <summary>
-        /// Measures the execution time of <paramref name="function"/> with a given amount of <paramref name="iterations"/>.
+        /// Measures the execution time of a function with a given amount of
+        /// iterations.
         /// </summary>
         /// <param name="foo">The function to be executed.</param>
         /// <param name="iterations">The amount of times the function is executed.</param>
@@ -46,7 +47,8 @@ namespace Zigurous.Debug
         }
 
         /// <summary>
-        /// Compares the execution time between <paramref name="foo"/> and <paramref name="bar"/> with a given amount of <paramref name="iterations"/>.
+        /// Compares the execution time between two functions with a given
+        /// amount of iterations.
         /// </summary>
         /// <param name="foo">The first function to be executed.</param>
         /// <param name="bar">The second function to be executed.</param>
@@ -71,14 +73,15 @@ namespace Zigurous.Debug
         }
 
         /// <summary>
-        /// Performs a benchmark that runs each function a given amount of <paramref name="iterations"/>.
+        /// Performs a benchmark that runs each provided function a given amount
+        /// of iterations.
         /// </summary>
         /// <param name="iterations">The amount of times each function is executed.</param>
-        /// <param name="foobar">The functions to be executed.</param>
-        public static void Run(int iterations, params Action[] foobar)
+        /// <param name="functions">The functions to be executed.</param>
+        public static void Run(int iterations, params Action[] functions)
         {
-            for (int i = 0; i < foobar.Length; i++) {
-                Measure(foobar[i], iterations);
+            for (int i = 0; i < functions.Length; i++) {
+                Measure(functions[i], iterations);
             }
         }
 

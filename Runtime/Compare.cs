@@ -9,7 +9,8 @@ namespace Zigurous.Debug
     public static class Compare<T> where T: IEquatable<T>
     {
         /// <summary>
-        /// Tests the equality of the results of <paramref name="foo"/> and <paramref name="bar"/> with a given amount of <paramref name="iterations"/>.
+        /// Tests the equality of the results of two functions with a given
+        /// amount of iterations.
         /// </summary>
         /// <param name="foo">The first function to execute.</param>
         /// <param name="bar">The second function to execute.</param>

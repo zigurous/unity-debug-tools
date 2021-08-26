@@ -17,7 +17,7 @@ namespace Zigurous.Debug
         public Text displayText;
 
         /// <summary>
-        /// The text format of the framerate display.
+        /// The text format of the framerate display (Read only).
         /// </summary>
         public string displayFormat { get; protected set; }
 
@@ -28,7 +28,7 @@ namespace Zigurous.Debug
         public float refreshRate = 1.0f;
 
         /// <summary>
-        /// The time of the next framerate update.
+        /// The time of the next framerate update (Read only).
         /// </summary>
         public float nextUpdate { get; private set; }
 
@@ -73,6 +73,17 @@ namespace Zigurous.Debug
         }
 
         /// <summary>
+        /// Updates the display with the given framerate.
+        /// </summary>
+        /// <param name="fps">The framerate to display.</param>
+        protected virtual void UpdateDisplay(float fps)
+        {
+            if (this.displayText != null) {
+                this.displayText.text = fps.ToString(this.displayFormat);
+            }
+        }
+
+        /// <summary>
         /// Sets the text format of the framerate display.
         /// </summary>
         /// <param name="decimals">The number of decimal digits to display.</param>
@@ -91,17 +102,6 @@ namespace Zigurous.Debug
             }
 
             this.displayFormat = stringBuilder.ToString();
-        }
-
-        /// <summary>
-        /// Updates the display with the given framerate.
-        /// </summary>
-        /// <param name="fps">The framerate to display.</param>
-        protected virtual void UpdateDisplay(float fps)
-        {
-            if (this.displayText != null) {
-                this.displayText.text = fps.ToString(this.displayFormat);
-            }
         }
 
     }

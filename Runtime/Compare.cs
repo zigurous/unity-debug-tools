@@ -39,7 +39,7 @@ namespace Zigurous.Debug
             float percentEqual = (float)amountEqual / (float)iterations;
 
             if (log) {
-                UnityEngine.Debug.Log($"[Compare]: {amountEqual.ToString()}/{iterations.ToString()} ({(percentEqual * 100.0f).ToString()}%) equal results");
+                UnityEngine.Debug.Log($"[Compare]: {amountEqual.ToString()}/{iterations.ToString()} ({(percentEqual * 100f).ToString()}%) equal results");
             }
 
             return percentEqual;

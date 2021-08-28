@@ -25,7 +25,7 @@ namespace Zigurous.Debug
         /// The amount of seconds between display updates.
         /// </summary>
         [Tooltip("The amount of seconds between display updates.")]
-        public float refreshRate = 1.0f;
+        public float refreshRate = 1f;
 
         /// <summary>
         /// The time of the next framerate update (Read only).
@@ -67,7 +67,7 @@ namespace Zigurous.Debug
             if (Time.unscaledTime > this.nextUpdate)
             {
                 this.nextUpdate = Time.unscaledTime + this.refreshRate;
-                float fps = 1.0f / Time.unscaledDeltaTime;
+                float fps = 1f / Time.unscaledDeltaTime;
                 UpdateDisplay(fps);
             }
         }

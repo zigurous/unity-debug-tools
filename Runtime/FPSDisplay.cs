@@ -32,11 +32,8 @@ namespace Zigurous.Debug
         /// </summary>
         public float nextUpdate { get; private set; }
 
-        /// <summary>
-        /// The number of decimal digits to display.
-        /// </summary>
-        [Tooltip("The number of decimal digits to display.")]
         [SerializeField]
+        [Tooltip("The number of decimal digits to display.")]
         private int _decimals = 0;
 
         /// <summary>

@@ -51,19 +51,19 @@ namespace Zigurous.Debug
 
         private void OnValidate()
         {
-            SetDisplayFormat(this.decimals);
+            SetDisplayFormat(decimals);
         }
 
         private void Awake()
         {
-            SetDisplayFormat(this.decimals);
+            SetDisplayFormat(decimals);
         }
 
         private void Update()
         {
-            if (Time.unscaledTime > this.nextUpdate)
+            if (Time.unscaledTime > nextUpdate)
             {
-                this.nextUpdate = Time.unscaledTime + this.refreshRate;
+                nextUpdate = Time.unscaledTime + refreshRate;
                 float fps = 1f / Time.unscaledDeltaTime;
                 UpdateDisplay(fps);
             }
@@ -75,8 +75,8 @@ namespace Zigurous.Debug
         /// <param name="fps">The framerate to display.</param>
         protected virtual void UpdateDisplay(float fps)
         {
-            if (this.displayText != null) {
-                this.displayText.text = fps.ToString(this.displayFormat);
+            if (displayText != null) {
+                displayText.text = fps.ToString(displayFormat);
             }
         }
 
@@ -98,7 +98,7 @@ namespace Zigurous.Debug
                 stringBuilder.Insert(2, "0", decimals);
             }
 
-            this.displayFormat = stringBuilder.ToString();
+            displayFormat = stringBuilder.ToString();
         }
 
     }

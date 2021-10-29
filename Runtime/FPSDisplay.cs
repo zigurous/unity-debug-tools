@@ -34,17 +34,17 @@ namespace Zigurous.Debug
 
         [SerializeField]
         [Tooltip("The number of decimal digits to display.")]
-        private int _decimals = 0;
+        private int m_Decimals = 0;
 
         /// <summary>
         /// The number of decimal digits to display.
         /// </summary>
         public int decimals
         {
-            get => _decimals;
+            get => m_Decimals;
             set
             {
-                _decimals = value;
+                m_Decimals = value;
                 SetDisplayFormat(value);
             }
         }

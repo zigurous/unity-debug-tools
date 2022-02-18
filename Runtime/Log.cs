@@ -11,7 +11,7 @@ namespace Zigurous.Debug
         /// <summary>
         /// A prefix appended to every log message printed to the console.
         /// </summary>
-        public static string prefix = "[Zigurous]: ";
+        public static string prefix = "[Zigurous] ";
 
         /// <summary>
         /// The display string for any null references that are logged to the

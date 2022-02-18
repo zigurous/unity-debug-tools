@@ -32,14 +32,14 @@ namespace Zigurous.Debug
                 if (equal) amountEqual++;
 
                 if (log && logIndividual) {
-                    UnityEngine.Debug.Log($"[Compare]: {resultFoo.ToString()} vs {resultBar.ToString()} | {(equal ? "Equal" : "Not Equal")}");
+                    UnityEngine.Debug.Log($"[Compare] {resultFoo.ToString()} vs {resultBar.ToString()} | {(equal ? "Equal" : "Not Equal")}");
                 }
             }
 
             float percentEqual = (float)amountEqual / (float)iterations;
 
             if (log) {
-                UnityEngine.Debug.Log($"[Compare]: {amountEqual.ToString()}/{iterations.ToString()} ({(percentEqual * 100f).ToString()}%) equal results");
+                UnityEngine.Debug.Log($"[Compare] {amountEqual.ToString()}/{iterations.ToString()} ({(percentEqual * 100f).ToString()}%) equal results");
             }
 
             return percentEqual;

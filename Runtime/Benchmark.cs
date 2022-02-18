@@ -37,7 +37,7 @@ namespace Zigurous.Debug
             double time = stopwatch.Elapsed.TotalMilliseconds;
 
             if (log) {
-                UnityEngine.Debug.Log($"[Benchmark]: {time.ToString()}ms | {foo.ToString()}");
+                UnityEngine.Debug.Log($"[Benchmark] {time.ToString()}ms | {foo.ToString()}");
             }
 
             return time;
@@ -63,7 +63,7 @@ namespace Zigurous.Debug
             double difference = timeFoo - timeBar;
 
             if (log) {
-                UnityEngine.Debug.Log($"[Benchmark]: {timeFoo.ToString()}ms vs {timeBar.ToString()}ms | {difference.ToString()}ms");
+                UnityEngine.Debug.Log($"[Benchmark] {timeFoo.ToString()}ms vs {timeBar.ToString()}ms | {difference.ToString()}ms");
             }
 
             return difference;

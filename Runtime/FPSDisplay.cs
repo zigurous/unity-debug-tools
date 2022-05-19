@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,7 +25,7 @@ namespace Zigurous.Debug
         /// The amount of seconds between display updates.
         /// </summary>
         [Tooltip("The amount of seconds between display updates.")]
-        public float refreshRate = 1f;
+        public float refreshRate = 0.125f;
 
         /// <summary>
         /// The time of the next framerate update.

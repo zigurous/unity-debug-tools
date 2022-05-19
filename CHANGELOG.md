@@ -10,6 +10,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - New `Draw` class with additional methods compared to Unity's debug draw functions
+- Added additional compiler directives to compile-out code in release builds
+
+### Changed
+
+- Changed `FPSDisplay.displayFormat` setter from protected to public so custom formats can be set without needing to extend the class
+- Changed `FPSDisplay.nextUpdate` from public to private (only needed internally)
 
 ## [1.3.0] - 2021/11/06
 

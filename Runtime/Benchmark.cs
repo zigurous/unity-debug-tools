@@ -80,9 +80,11 @@ namespace Zigurous.Debug
         /// <param name="functions">The functions to be executed.</param>
         public static void Run(int iterations, params Action[] functions)
         {
+            #if UNITY_EDITOR || DEVELOPMENT_BUILD
             for (int i = 0; i < functions.Length; i++) {
                 Measure(functions[i], iterations);
             }
+            #endif
         }
 
     }

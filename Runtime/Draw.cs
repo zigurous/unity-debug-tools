@@ -89,6 +89,7 @@ namespace Zigurous.Debug
             /// <param name="color">The color to draw the box with.</param>
             public void Draw(Color color)
             {
+                #if UNITY_EDITOR || DEVELOPMENT_BUILD
                 UnityEngine.Debug.DrawLine(frontTopLeft, frontTopRight, color);
                 UnityEngine.Debug.DrawLine(frontTopRight, frontBottomRight, color);
                 UnityEngine.Debug.DrawLine(frontBottomRight, frontBottomLeft, color);
@@ -103,6 +104,7 @@ namespace Zigurous.Debug
                 UnityEngine.Debug.DrawLine(frontTopRight, backTopRight, color);
                 UnityEngine.Debug.DrawLine(frontBottomRight, backBottomRight, color);
                 UnityEngine.Debug.DrawLine(frontBottomLeft, backBottomLeft, color);
+                #endif
             }
 
         }
@@ -116,7 +118,9 @@ namespace Zigurous.Debug
         /// <param name="color">The color of the box.</param>
         public static void Box(Vector3 position, Vector3 scale, Quaternion rotation, Color color)
         {
+            #if UNITY_EDITOR || DEVELOPMENT_BUILD
             new Box3D(position, scale / 2f, rotation).Draw(color);
+            #endif
         }
 
         /// <summary>
@@ -130,8 +134,10 @@ namespace Zigurous.Debug
         /// <param name="color">The color of the box.</param>
         public static void BoxCast(Vector3 center, Vector3 halfExtents, Vector3 direction, Quaternion orientation, float distance, Color color)
         {
+            #if UNITY_EDITOR || DEVELOPMENT_BUILD
             center += (direction.normalized * distance);
             Box(center, halfExtents, orientation, color);
+            #endif
         }
 
     }

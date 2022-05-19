@@ -38,7 +38,9 @@ namespace Zigurous.Debug
         /// <param name="message">The message to log.</param>
         public static void Message(object message)
         {
+            #if UNITY_EDITOR || DEVELOPMENT_BUILD
             Message(message, Log.prefix);
+            #endif
         }
 
         /// <summary>
@@ -66,7 +68,9 @@ namespace Zigurous.Debug
         /// <param name="context">The context of the message.</param>
         public static void Message(object message, UnityEngine.Object context)
         {
+            #if UNITY_EDITOR || DEVELOPMENT_BUILD
             Message(message, Log.prefix, context);
+            #endif
         }
 
         /// <summary>
@@ -109,7 +113,9 @@ namespace Zigurous.Debug
         /// <param name="message">The message to log.</param>
         public static void Warning(object message)
         {
+            #if UNITY_EDITOR || DEVELOPMENT_BUILD
             Warning(message, Log.prefix);
+            #endif
         }
 
         /// <summary>
@@ -137,7 +143,9 @@ namespace Zigurous.Debug
         /// <param name="context">The context of the message.</param>
         public static void Warning(object message, UnityEngine.Object context)
         {
+            #if UNITY_EDITOR || DEVELOPMENT_BUILD
             Warning(message, Log.prefix, context);
+            #endif
         }
 
         /// <summary>
@@ -181,7 +189,9 @@ namespace Zigurous.Debug
         /// <param name="message">The message to log.</param>
         public static void Error(object message)
         {
+            #if UNITY_EDITOR || DEVELOPMENT_BUILD
             Error(message, Log.prefix);
+            #endif
         }
 
         /// <summary>
@@ -209,7 +219,9 @@ namespace Zigurous.Debug
         /// <param name="context">The context of the message.</param>
         public static void Error(object message, UnityEngine.Object context)
         {
+            #if UNITY_EDITOR || DEVELOPMENT_BUILD
             Error(message, Log.prefix, context);
+            #endif
         }
 
         /// <summary>
@@ -253,7 +265,9 @@ namespace Zigurous.Debug
         /// <param name="message">The message to log.</param>
         public static void Assertion(object message)
         {
+            #if UNITY_ASSERTIONS && (UNITY_EDITOR || DEVELOPMENT_BUILD)
             Assertion(message, Log.prefix);
+            #endif
         }
 
         /// <summary>
@@ -281,7 +295,9 @@ namespace Zigurous.Debug
         /// <param name="context">The context of the message.</param>
         public static void Assertion(object message, UnityEngine.Object context)
         {
+            #if UNITY_ASSERTIONS && (UNITY_EDITOR || DEVELOPMENT_BUILD)
             Assertion(message, Log.prefix, context);
+            #endif
         }
 
         /// <summary>

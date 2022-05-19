@@ -17,9 +17,9 @@ namespace Zigurous.Debug
         public Text displayText;
 
         /// <summary>
-        /// The text format of the framerate display (Read only).
+        /// The text format of the framerate display.
         /// </summary>
-        public string displayFormat { get; protected set; }
+        public string displayFormat { get; set; }
 
         /// <summary>
         /// The amount of seconds between display updates.
@@ -28,9 +28,9 @@ namespace Zigurous.Debug
         public float refreshRate = 1f;
 
         /// <summary>
-        /// The time of the next framerate update (Read only).
+        /// The time of the next framerate update.
         /// </summary>
-        public float nextUpdate { get; private set; }
+        private float nextUpdate;
 
         [SerializeField]
         [Tooltip("The number of decimal digits to display.")]

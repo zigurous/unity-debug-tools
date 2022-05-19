@@ -1,4 +1,4 @@
-﻿using System.Text;
+using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -47,6 +47,11 @@ namespace Zigurous.Debug
                 m_Decimals = value;
                 SetDisplayFormat(value);
             }
+        }
+
+        private void Reset()
+        {
+            displayText = GetComponentInChildren<Text>();
         }
 
         private void OnValidate()

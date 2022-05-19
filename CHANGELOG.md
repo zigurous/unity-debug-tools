@@ -11,11 +11,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - New `Draw` class with additional methods compared to Unity's debug draw functions
 - Added additional compiler directives to compile-out code in release builds
+- Added `Reset` function to `FPSDisplay` to automatically set text component reference
 
 ### Changed
 
 - Changed `FPSDisplay.displayFormat` setter from protected to public so custom formats can be set without needing to extend the class
 - Changed `FPSDisplay.nextUpdate` from public to private (only needed internally)
+- Changed default `FPSDisplay.refreshRate` from 1s to 0.125s
 
 ## [1.3.0] - 2021/11/06
 

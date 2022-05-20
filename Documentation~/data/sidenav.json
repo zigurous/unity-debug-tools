@@ -38,6 +38,10 @@
       {
         "name": "Debug Shaders",
         "path": "/manual/shaders"
+      },
+      {
+        "name": "Drawing",
+        "path": "/manual/drawing"
       }
     ]
   },

@@ -10,9 +10,9 @@ The **Debug Tools** package contains assets and scripts for debugging Unity proj
 
 ## Overview
 
-#### 🧰 [Scripting API](/api/Zigurous.Debug)
+#### ⚙️ [Installation](/installation)
 
-#### ⚙️ [Installation](/manual/installation)
+#### 🧰 [Scripting API](/api/Zigurous.Debug)
 
 #### 📋 [Changelog](/changelog)
 
@@ -30,4 +30,4 @@ The **Debug Tools** package contains assets and scripts for debugging Unity proj
 
 #### 🎨 [Debug Shaders](/manual/shaders)
 
-#### ✏️ [Drawing](/manual/benchmarking)
+#### ✏️ [Drawing](/manual/drawing)

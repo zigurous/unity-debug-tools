@@ -10,24 +10,24 @@ The **Debug Tools** package contains assets and scripts for debugging Unity proj
 
 ## Overview
 
-### 🧰 [Scripting API](/api/Zigurous.Debug)
+#### 🧰 [Scripting API](/api/Zigurous.Debug)
 
-### ⚙️ [Installation](/manual/installation)
+#### ⚙️ [Installation](/manual/installation)
 
-### 📋 [Changelog](/changelog)
+#### 📋 [Changelog](/changelog)
 
-### ⚖️ [License](/license)
+#### ⚖️ [License](/license)
 
 <hr/>
 
 ## Reference
 
-### 📝 [Logging](/manual/logging)
+#### 📝 [Logging](/manual/logging)
 
-### ⏱️ [Benchmarking](/manual/benchmarking)
+#### ⏱️ [Benchmarking](/manual/benchmarking)
 
-### ⏰ [Framerate Display](/manual/framerate)
+#### ⏰ [Framerate Display](/manual/framerate)
 
-### 🎨 [Debug Shaders](/manual/shaders)
+#### 🎨 [Debug Shaders](/manual/shaders)
 
-### ✏️ [Drawing](/manual/benchmarking)
+#### ✏️ [Drawing](/manual/benchmarking)

@@ -18,6 +18,7 @@ namespace Zigurous.Debug
             public Vector3 localFrontTopRight { get; private set; }
             public Vector3 localFrontBottomLeft { get; private set; }
             public Vector3 localFrontBottomRight { get; private set; }
+
             public Vector3 localBackTopLeft => -localFrontBottomRight;
             public Vector3 localBackTopRight => -localFrontBottomLeft;
             public Vector3 localBackBottomLeft => -localFrontTopRight;
@@ -27,6 +28,7 @@ namespace Zigurous.Debug
             public Vector3 frontTopRight => localFrontTopRight + origin;
             public Vector3 frontBottomLeft => localFrontBottomLeft + origin;
             public Vector3 frontBottomRight => localFrontBottomRight + origin;
+
             public Vector3 backTopLeft => localBackTopLeft + origin;
             public Vector3 backTopRight => localBackTopRight + origin;
             public Vector3 backBottomLeft => localBackBottomLeft + origin;

@@ -6,7 +6,7 @@ namespace Zigurous.Debug
     /// Compares how many results are equal between two functions.
     /// </summary>
     /// <typeparam name="T">The type of value to compare.</typeparam>
-    public static class Compare<T> where T: IEquatable<T>
+    public static class Compare<T> where T : IEquatable<T>
     {
         /// <summary>
         /// Tests the equality of the results of two functions with a given
@@ -29,7 +29,10 @@ namespace Zigurous.Debug
                 T resultBar = bar();
 
                 bool equal = resultFoo.Equals(resultBar);
-                if (equal) amountEqual++;
+
+                if (equal) {
+                    amountEqual++;
+                }
 
                 if (log && logIndividual) {
                     UnityEngine.Debug.Log($"[Compare] {resultFoo.ToString()} vs {resultBar.ToString()} | {(equal ? "Equal" : "Not Equal")}");

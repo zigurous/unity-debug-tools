@@ -23,9 +23,9 @@ Benchmark.Run(1000, Foo, Bar, Baz);
 
 ## 🎏 Compare Equality
 
-Alternatively, sometimes it is useful to test if the results of two functions are equal. The **Debug Tools** package comes with another static class [Compare](/api/Zigurous.Debug/Compare-1) to handle these tests. The class uses generics to know the type of value you are looking to compare, and it returns the percentage of results that are equal.
+Sometimes it is useful to test if multiple functions return the same results. The **Debug Tools** package comes with another static class [Compare](/api/Zigurous.Debug/Compare-1) to handle these tests. The class uses generics to know the type of value you are looking to compare, and it returns the percentage of results that are equal (or not equal) for a given amount of iterations.
 
 ```csharp
-Compare<bool>.Test(Foo, Bar, 1000);
-Compare<float>.Test(Foo, Bar, 1000);
+Compare.Equal(Foo, Bar, 1000);
+Compare.NotEqual(Foo, Bar, 1000);
 ```

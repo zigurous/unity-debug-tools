@@ -14,6 +14,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - New editor mesh debugger: Window > Analysis > Mesh Debugger
 - Behavior help URLs
 
+### Changed
+
+- Refactored the `Compare<T>` class
+  - Changed the `Compare.Test` function to two distinct functions: `Compare.Equal` and `Compare.NotEqual`
+  - The generics are now applied to the functions instead of the class, i.e., `Compare.Equal<int>` instead of `Compare<int>.Equal`
+
 ## [1.4.0] - 2022/05/20
 
 ### Added

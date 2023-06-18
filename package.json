@@ -8,6 +8,9 @@
   "documentationUrl": "https://docs.zigurous.com/com.zigurous.debug",
   "changelogUrl": "https://docs.zigurous.com/com.zigurous.debug/changelog",
   "licensesUrl": "https://docs.zigurous.com/com.zigurous.debug/license",
+  "dependencies": {
+    "com.unity.inputsystem": "1.2.0"
+  },
   "keywords": [
     "debug",
     "debugging",

@@ -1,9 +1,11 @@
 {
-    "name": "Zigurous.Debug",
+    "name": "Zigurous.Debug.Editor",
     "references": [
-        "GUID:75469ad4d38634e559750d17036d5f7c"
+        "GUID:0186cdaa7ccbaeb4f91d3907506784d7"
     ],
-    "includePlatforms": [],
+    "includePlatforms": [
+        "Editor"
+    ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,

@@ -30,4 +30,6 @@ The **Debug Tools** package contains assets and scripts for debugging Unity proj
 
 #### 🎨 [Debug Shaders](/manual/shaders)
 
+#### 🖇️ [Mesh Debugger](/manual/mesh-debugger)
+
 #### ✏️ [Drawing](/manual/drawing)

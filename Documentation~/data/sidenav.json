@@ -40,6 +40,10 @@
         "path": "/manual/shaders"
       },
       {
+        "name": "Mesh Debugger",
+        "path": "/manual/mesh-debugger"
+      },
+      {
         "name": "Drawing",
         "path": "/manual/drawing"
       }

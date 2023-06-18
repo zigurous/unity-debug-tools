@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.5.0] - 2023/06/18
+
+### Added
+
+- New `ExitApplication` script
+- New `PauseApplication` script
+- New editor mesh debugger: Window > Analysis > Mesh Debugger
+- Behavior help URLs
+
+### Changed
+
+- Refactored the `Compare<T>` class
+  - Changed the `Compare.Test` function to two distinct functions: `Compare.Equal` and `Compare.NotEqual`
+  - The generics are now applied to the functions instead of the class, i.e., `Compare.Equal<int>` instead of `Compare<int>.Equal`
+
 ## [1.4.0] - 2022/05/20
 
 ### Added

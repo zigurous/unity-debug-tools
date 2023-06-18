@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - New `ExitApplication` script
 - New `PauseApplication` script
-- New editor mesh debugger: Window > Analysis > Mesh Debugger
+- New editor mesh debugger: `Window > Analysis > Mesh Debugger`
 - Behavior help URLs
 
 ### Changed

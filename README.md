@@ -10,6 +10,8 @@ The **Debug Tools** package contains assets and scripts for debugging Unity proj
 - [Benchmarking](https://docs.zigurous.com/com.zigurous.debug/manual/benchmarking)
 - [Framerate Display](https://docs.zigurous.com/com.zigurous.debug/manual/framerate)
 - [Debug Shaders](https://docs.zigurous.com/com.zigurous.debug/manual/shaders)
+- [Mesh Debugger](https://docs.zigurous.com/com.zigurous.debug/manual/mesh-debugger)
+- [Drawing](https://docs.zigurous.com/com.zigurous.debug/manual/drawing)
 
 ## Installation
 

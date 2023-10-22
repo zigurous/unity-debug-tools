@@ -3,7 +3,7 @@ name: Generate Docs
 on:
   push:
     branches:
-      - main
+      - release/1.5.0
   workflow_dispatch:
 
 concurrency:
@@ -16,7 +16,7 @@ jobs:
     uses: zigurous/docs/.github/workflows/unity-package.yml@main
     with:
       package_title: "Debug Tools"
-      package_base_path: com.zigurous.debug
+      package_base_path: com.zigurous.debug@1.5.0
       package_workflow: generate-docs.yml
       package_artifact: docs
     secrets:

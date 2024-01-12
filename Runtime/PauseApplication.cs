@@ -21,7 +21,7 @@ namespace Zigurous.Debug
         /// </summary>
         [Tooltip("The input action that pauses the application.")]
         [Header("Input System")]
-        public InputAction pauseInput = new InputAction("PauseApplication", InputActionType.Button, "<Keyboard>/pause");
+        public InputAction pauseInput = new("PauseApplication", InputActionType.Button, "<Keyboard>/pause");
         #endif
 
         #if ENABLE_LEGACY_INPUT_MANAGER

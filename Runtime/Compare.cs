@@ -39,7 +39,7 @@ namespace Zigurous.Debug
                 }
             }
 
-            float percentEqual = (float)amountEqual / (float)iterations;
+            float percentEqual = amountEqual / (float)iterations;
 
             if (log) {
                 UnityEngine.Debug.Log($"[Compare] {amountEqual.ToString()}/{iterations.ToString()} ({(percentEqual * 100f).ToString()}%) equal results");
@@ -83,7 +83,7 @@ namespace Zigurous.Debug
                 }
             }
 
-            float percentNotEqual = (float)amountNotEqual / (float)iterations;
+            float percentNotEqual = amountNotEqual / (float)iterations;
 
             if (log) {
                 UnityEngine.Debug.Log($"[Compare] {amountNotEqual.ToString()}/{iterations.ToString()} ({(percentNotEqual * 100f).ToString()}%) not equal results");

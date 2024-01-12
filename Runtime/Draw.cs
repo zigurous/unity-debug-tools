@@ -79,7 +79,7 @@ namespace Zigurous.Debug
             /// <param name="pivot">The pivot to rotate around.</param>
             /// <param name="orientation">The orientation to rotate the point to.</param>
             /// <returns>The rotated point.</returns>
-            private Vector3 RotatePointAroundPivot(Vector3 point, Vector3 pivot, Quaternion orientation)
+            private readonly Vector3 RotatePointAroundPivot(Vector3 point, Vector3 pivot, Quaternion orientation)
             {
                 Vector3 direction = point - pivot;
                 return pivot + orientation * direction;
@@ -137,7 +137,7 @@ namespace Zigurous.Debug
         public static void BoxCast(Vector3 center, Vector3 halfExtents, Vector3 direction, Quaternion orientation, float distance, Color color)
         {
             #if UNITY_EDITOR || DEVELOPMENT_BUILD
-            center += (direction.normalized * distance);
+            center += direction.normalized * distance;
             Box(center, halfExtents, orientation, color);
             #endif
         }

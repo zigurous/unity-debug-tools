@@ -18,7 +18,7 @@ namespace Zigurous.Debug
         /// </summary>
         [Tooltip("The input action that quits the application.")]
         [Header("Input System")]
-        public InputAction quitInput = new InputAction("ExitApplication", InputActionType.Button, "<Keyboard>/escape");
+        public InputAction quitInput = new("ExitApplication", InputActionType.Button, "<Keyboard>/escape");
         #endif
 
         #if ENABLE_LEGACY_INPUT_MANAGER

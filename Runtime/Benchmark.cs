@@ -12,7 +12,7 @@ namespace Zigurous.Debug
         /// <summary>
         /// A stopwatch that measures execution time.
         /// </summary>
-        private static Stopwatch stopwatch = new Stopwatch();
+        private static Stopwatch stopwatch = new();
         #endif
 
         /// <summary>

@@ -19,20 +19,20 @@ namespace Zigurous.Debug
             public Vector3 localFrontBottomLeft { get; private set; }
             public Vector3 localFrontBottomRight { get; private set; }
 
-            public Vector3 localBackTopLeft => -localFrontBottomRight;
-            public Vector3 localBackTopRight => -localFrontBottomLeft;
-            public Vector3 localBackBottomLeft => -localFrontTopRight;
-            public Vector3 localBackBottomRight => -localFrontTopLeft;
+            public readonly Vector3 localBackTopLeft => -localFrontBottomRight;
+            public readonly Vector3 localBackTopRight => -localFrontBottomLeft;
+            public readonly Vector3 localBackBottomLeft => -localFrontTopRight;
+            public readonly Vector3 localBackBottomRight => -localFrontTopLeft;
 
-            public Vector3 frontTopLeft => localFrontTopLeft + origin;
-            public Vector3 frontTopRight => localFrontTopRight + origin;
-            public Vector3 frontBottomLeft => localFrontBottomLeft + origin;
-            public Vector3 frontBottomRight => localFrontBottomRight + origin;
+            public readonly Vector3 frontTopLeft => localFrontTopLeft + origin;
+            public readonly Vector3 frontTopRight => localFrontTopRight + origin;
+            public readonly Vector3 frontBottomLeft => localFrontBottomLeft + origin;
+            public readonly Vector3 frontBottomRight => localFrontBottomRight + origin;
 
-            public Vector3 backTopLeft => localBackTopLeft + origin;
-            public Vector3 backTopRight => localBackTopRight + origin;
-            public Vector3 backBottomLeft => localBackBottomLeft + origin;
-            public Vector3 backBottomRight => localBackBottomRight + origin;
+            public readonly Vector3 backTopLeft => localBackTopLeft + origin;
+            public readonly Vector3 backTopRight => localBackTopRight + origin;
+            public readonly Vector3 backBottomLeft => localBackBottomLeft + origin;
+            public readonly Vector3 backBottomRight => localBackBottomRight + origin;
 
             /// <summary>
             /// Creates a new box with a specified origin and size.
@@ -89,7 +89,7 @@ namespace Zigurous.Debug
             /// Draws the box with a given color.
             /// </summary>
             /// <param name="color">The color to draw the box with.</param>
-            public void Draw(Color color)
+            public readonly void Draw(Color color)
             {
                 #if UNITY_EDITOR || DEVELOPMENT_BUILD
                 UnityEngine.Debug.DrawLine(frontTopLeft, frontTopRight, color);

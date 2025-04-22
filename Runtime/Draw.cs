@@ -138,7 +138,7 @@ namespace Zigurous.Debug
         {
             #if UNITY_EDITOR || DEVELOPMENT_BUILD
             center += direction.normalized * distance;
-            Box(center, halfExtents, orientation, color);
+            new Box3D(center, halfExtents, orientation).Draw(color);
             #endif
         }
 
